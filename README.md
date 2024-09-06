@@ -8,7 +8,7 @@ This Nuclei template is designed to detect the presence of the `__BUILD_MANIFEST
 
 - **Template ID**: nextjs-build-manifest-detection
 - **Severity**: Informational
-- **Author**: Your Name
+- **Author**: s1d6p01nt7
 
 ### Description
 
