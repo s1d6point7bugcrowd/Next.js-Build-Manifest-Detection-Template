@@ -1,0 +1,30 @@
+id: nextjs-build-manifest-detection
+
+info:
+  name: Next.js Build Manifest Detection
+  author: s1d6p01nt7
+  severity: info
+  description: This template checks for the existence of the __BUILD_MANIFEST object in Next.js websites, which contains sorted paths of the website.
+
+requests:
+  - method: GET
+    path:
+      - "{{BaseURL}}/"
+
+    matchers-condition: and
+    matchers:
+      - type: word
+        part: body
+        words:
+          - "__BUILD_MANIFEST"
+
+      - type: word
+        part: body
+        words:
+          - "sortedPages"
+
+    extractors:
+      - type: regex
+        part: body
+        regex:
+          - "__BUILD_MANIFEST(?:.|\\s)*?sortedPages(?:.|\\s)*?(\\[.*?\\])"
