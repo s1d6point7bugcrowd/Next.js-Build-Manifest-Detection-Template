@@ -45,3 +45,10 @@ To use this template with Nuclei, save the YAML file in your Nuclei templates di
 
 ```bash
 nuclei -t /path/to/nextjs-build-manifest-detection.yaml -u https://target-website.com
+
+
+
+
+Disclaimer
+
+This template is intended for legal, ethical testing purposes only. Unauthorized or malicious use of this template may violate legal and privacy regulations, including, but not limited to, the Computer Fraud and Abuse Act (CFAA) and the General Data Protection Regulation (GDPR). Ensure that you have explicit permission to test the target systems before running this template. The author and contributors to this template are not responsible for any damage, loss, or legal consequences resulting from misuse.
