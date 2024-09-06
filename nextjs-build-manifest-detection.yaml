@@ -4,7 +4,7 @@ info:
   name: Next.js Build Manifest Detection
   author: s1d6p01nt7
   severity: info
-  description: This template checks for the existence of the __BUILD_MANIFEST object in Next.js websites, which contains sorted paths of the website.
+  description: This template checks for the existence of the __BUILD_MANIFEST object and other Next.js-specific characteristics to detect Next.js websites more accurately.
 
 requests:
   - method: GET
@@ -17,11 +17,17 @@ requests:
         part: body
         words:
           - "__BUILD_MANIFEST"
-
       - type: word
         part: body
         words:
           - "sortedPages"
+      - type: word
+        part: body
+        words:
+          - "_next/static/" # Specific to Next.js structure
+      - type: status
+        status:
+          - 200
 
     extractors:
       - type: regex
